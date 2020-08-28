@@ -83,7 +83,7 @@ function set_cards(data){
                     <h2><span>Nome Completo:</span> ${item.fullName}</h2><br />
                     <p><span>Quero Apender:</span> ${item.toLearning}</p><br />
                     <p><span>Quero Ensinar:</span> ${item.toTeacher}</p><br />
-                    <p><span>Linkedin:</span> <a href="https://${item.linkedin}">https://${item.linkedin}</a></p><br />
+                    <p><span>Linkedin:</span> <a href="${item.linkedin}">${item.linkedin}</a></p><br />
                 </div>
             </div>
         `
