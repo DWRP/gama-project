@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TESTE</title>
+    <title>X-CODERS</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <script defer src="./assets/scripts/script.js"></script>
+
 </head>
 <body>
-    <h1>TESTE</h1>
+    <div id="root" class="root">
+        <header class="header">
+            <a href="/">
+                <img src="./assets/images/logo.svg" alt="x-corders">
+            </a>
+            <button class="download hidden" onclick="generatePDF()">IMPRIMIR</button>
+        </header>
+        <main class="main">
+            <div class="meet">
+                <div class="imagem">
+                    <img src="./assets/images/group.png" alt="">
+                </div>
+                <div class="resumo">
+                    <h1>Resumo do Meet</h1>
+                    <p>
+                        Foi discultido todas os itens solicitados no assignment e mais algumas coisas. <br />
+                        Primeiro de tudo, decidimos o nome. Ficou como X-Coders, que até soa bonito e vincula
+                        com o contexto de cada um ter sua diferença e essa diferença ser especial. <br />
+                         
+                    </p>
+                </div>
+            </div>
+            <div class="cards">
+            
+            </div>
+        </main>
+        <footer class="footer">
+            ©<a href="https://https://linkedin.com/in/douglaswalas">Douglas Walas </a> - 2020
+        </footer>
+         <div class="warning">
+            <p>Aviso: Este site usa cookies para obter melhores resultados através do estudo dos seus dados</p>
+            <button class="warning_button" onclick="accept_coockies()">Entendi</button>
+        </div>
+    </div>
 </body>
 </html>
