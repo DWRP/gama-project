@@ -95,8 +95,12 @@ async function main(){
     const result = await fetch(API+'/members').then(async (data)=> {
         return await data.json()
     })
-    
-    const cards = set_cards(result.members)
+
+    CARDS.innerHTML = "<h1 class='card'>Loading...</h1>"
+
+    const cards = await set_cards(result.members)
+
+    CARDS.innerHTML = ""
 
     cards.forEach(item=>CARDS.innerHTML += item)
 
