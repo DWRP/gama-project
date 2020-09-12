@@ -5,8 +5,8 @@
       "info-card#button-left",
       "flex-layout.row",
       "responsive-layout.desktop#desktop",
-      "responsive-layout.mobile#mobile",
-      "back-to-top-button"
+      "responsive-layout.mobile#mobile"
+      // "back-to-top-button"
     ]
   },
   "responsive-layout.desktop#desktop": {
@@ -115,11 +115,11 @@
       "src": "https://appliancetheme.vteximg.com.br/assets/vtex.file-manager-graphql/images/major_appliance_banner___bb10093866a127345ddfbcca3efa5022.png",
       "maxWidth": "100%"
     }
-  },
-  "back-to-top-button": {
-    "props": {
-      "display": "button",
-      "displayThreshold": 0
-    }
   }
+  // "back-to-top-button": {
+  //   "props": {
+  //     "display": "button",
+  //     "displayThreshold": -1
+  //   }
+  // }
 }
