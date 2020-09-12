@@ -1,12 +1,13 @@
-.infoCardContainer {
-    background-color: #555;
-    color: rgb(219, 33, 33);
-    padding: 16px 20px;
+.infoCardContainer--suspenso {
+
+    background-color: transparent;
+    padding: 1px 45px;
     border: none;
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 1;
     position: fixed;
-    bottom: 23px;
-    right: 28px;
-    width: 280px;
+    bottom: 1px;
+    right: 8px;
+    width: 1px;
+
   }
