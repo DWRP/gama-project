@@ -78,7 +78,7 @@
       "textPosition": "right",     
       "callToActionMode": "button",
       "callToActionText": "Chat",
-      "callToActionUrl": "/sale/d",
+      "callToActionUrl": "/about-us",
       "textAlignment": "center",
       "blockClass": "suspenso"
       
