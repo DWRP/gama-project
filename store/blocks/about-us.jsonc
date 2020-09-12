@@ -24,7 +24,7 @@
         "rich-text#about-content": {
           "props": {
             "text":
-            "Bem-vindo ao nosso chat inteligente,aqui vamos entregar as respostas que você procura,especialmente o tracking dessa comprinha tão especial"
+            "Bem-vindo ao nosso chat inteligente,aqui vamos entregar as respostas que você procura,especialmente o tracking dessa comprinha tão especial!"
           }
         },
         "image#about-us": {
