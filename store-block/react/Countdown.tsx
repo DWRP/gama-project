@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Chat from './components/Chat';
 
 interface CountdownProps { }
 
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ }) => {
+
   return (
     <div>
       <h1>CountDown Teste</h1>
+      <Chat />
     </div>
   );
 }
