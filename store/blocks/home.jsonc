@@ -1,12 +1,13 @@
 {
   "store.home": {
     "blocks": [
+      "info-card#suspenso",
       "info-card#button-right",
       "info-card#button-left",
       "flex-layout.row",
       "responsive-layout.desktop#desktop",
-      "responsive-layout.mobile#mobile",
-      "back-to-top-button"
+      "responsive-layout.mobile#mobile"
+      // "back-to-top-button"
     ]
   },
   "responsive-layout.desktop#desktop": {
@@ -67,19 +68,34 @@
       "callToActionUrl": "/sale/d",
       "textAlignment": "center",
       "blockClass": "vintage"
+     
     }
   },
+
+  "info-card#suspenso": {
+    "props": {
+      "isFullModeStyle": false,
+      "textPosition": "right",     
+      "callToActionMode": "button",
+      "callToActionText": "Chat",
+      "callToActionUrl": "/about-us",
+      "textAlignment": "center",
+      "blockClass": "suspenso"
+      
+    }
+  },
+
   "info-card#button-left": {
     "props": {
       "isFullModeStyle": false,
       "headline": "Shining chrome",
-      "subhead": "Give your kitchen a cool style adding warm metallic finishes.<br>Available until January 2020.",
+      "subhead": "KKive your kitchen a cool style adding warm metallic finishes.<br>Available until January 2020.",
       "callToActionMode": "link",
       "callToActionText": "Go to Collection",
       "imageUrl": "https://appliancetheme.vteximg.com.br/arquivos/cozinha-cinza-min.png",
       "textPosition": "left",
-      "textAlignment": "center",
-      "blockClass": "metal"
+      "textAlignment": "center"
+     
     }
   },
   //FLEX LAYOUT
@@ -115,11 +131,11 @@
       "src": "https://appliancetheme.vteximg.com.br/assets/vtex.file-manager-graphql/images/major_appliance_banner___bb10093866a127345ddfbcca3efa5022.png",
       "maxWidth": "100%"
     }
-  },
-  "back-to-top-button": {
-    "props": {
-      "display": "button",
-      "displayThreshold": 0
-    }
   }
+  // "back-to-top-button": {
+  //   "props": {
+  //     "display": "button",
+  //     "displayThreshold": -1
+  //   }
+  // }
 }
