@@ -1,0 +1,13 @@
+.infoCardContainer--suspenso {
+
+    background-color: transparent;
+    padding: 1px 45px;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    position: fixed;
+    bottom: 1px;
+    right: 8px;
+    width: 1px;
+
+  }
