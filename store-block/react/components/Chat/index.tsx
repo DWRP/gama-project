@@ -15,7 +15,7 @@ const OpenButton = styled.button`
   width: 280px;
 `;
 const ChatPopUp = styled.div`
-  display: block;
+  display: none;
   position: fixed;
   bottom: 0;
   right: 15px;

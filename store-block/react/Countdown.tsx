@@ -7,7 +7,6 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ }) => {
 
   return (
     <div>
-      <h1>CountDown Teste</h1>
       <Chat />
     </div>
   );
