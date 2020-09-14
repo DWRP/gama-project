@@ -2,8 +2,7 @@
   "vtex.menu@2.x:menu#websites": {
     "children": [
       "menu-item#shop",
-      "menu-item#about-us",
-      "countdown"
+      "menu-item#about-us"
     ]
   },
   "menu-item#shop": {

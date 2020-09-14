@@ -1,28 +1,22 @@
-/* Blocks can be defined both on the store/blocks.json file, and in any number of json
- * files inside the store/blocks directory, with any arbitrary directory structure.
- *
- * Additionally, all blocks files can support comments, such as this one, if given the
- * .jsonc file extension.
- *
- * The store/blocks.json file is intended for backwards compatibility, for miscellaneous
- * blocks, or if the app is simple enough that it doesn't warrant splitting the file.
- */
 {
   "store.orderplaced": {
-    "blocks": ["order-placed"]
+    "blocks": [
+      "order-placed"
+    ]
   },
-
   "store.account": {
-    "blocks": ["my-account"],
+    "blocks": [
+      "my-account"
+    ],
     "parent": {
       "challenge": "challenge.profile"
     }
   },
-
   "store.login": {
-    "blocks": ["login-content#default"]
+    "blocks": [
+      "login-content#default"
+    ]
   },
-
   "login-content#default": {
     "props": {
       "isInitialScreenOptionOnly": false,
@@ -48,7 +42,6 @@
       "add-to-cart-button"
     ]
   },
-
   "product-summary-image#shelf": {
     "props": {
       "showBadge": false,
@@ -62,13 +55,11 @@
       "modal-trigger#quickview"
     ]
   },
-
   "product-summary-image": {
     "props": {
       "height": 220
     }
   },
-
   "product-summary-specification-badges": {
     "props": {
       "specificationGroupName": "Group",
@@ -77,12 +68,15 @@
       "displayValue": "SPECIFICATION_NAME"
     }
   },
-
   "store.product-review-form": {
-    "blocks": ["product-review-form"]
+    "blocks": [
+      "product-review-form"
+    ]
   },
   "store.not-found#product": {
-    "blocks": ["rich-text#not-found"]
+    "blocks": [
+      "rich-text#not-found"
+    ]
   },
   "rich-text#not-found": {
     "props": {
@@ -93,7 +87,9 @@
     }
   },
   "store.not-found#search": {
-    "blocks": ["rich-text#not-found"]
+    "blocks": [
+      "rich-text#not-found"
+    ]
   },
   "store.custom#faq": {
     "children": [

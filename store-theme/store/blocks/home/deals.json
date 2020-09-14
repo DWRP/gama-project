@@ -10,7 +10,6 @@
       "blockClass": "deals"
     }
   },
-
   "flex-layout.col#deals1": {
     "children": [
       "image#deal1",
@@ -25,7 +24,7 @@
   },
   "rich-text#deal1": {
     "props": {
-      "text": "Free shipping",
+      "text": "Envio Gratis",
       "blockClass": "deals"
     }
   },
@@ -43,7 +42,7 @@
   },
   "rich-text#deal2": {
     "props": {
-      "text": "One day delivery",
+      "text": "Envio imediato",
       "blockClass": "deals"
     }
   },
@@ -61,7 +60,7 @@
   },
   "rich-text#deal3": {
     "props": {
-      "text": "Pick up in store",
+      "text": "Retire na loja",
       "blockClass": "deals"
     }
   },
@@ -79,7 +78,7 @@
   },
   "rich-text#deal4": {
     "props": {
-      "text": "Exclusive deals",
+      "text": "Ofertas exclusivas",
       "blockClass": "deals"
     }
   }
