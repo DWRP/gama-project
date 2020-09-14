@@ -1,8 +1,6 @@
 {
   "store.home": {
     "blocks": [
-      "countdown",
-      "info-card#suspenso",
       "info-card#button-right",
       "info-card#button-left",
       "flex-layout.row",
@@ -69,17 +67,6 @@
       "callToActionUrl": "/sale/d",
       "textAlignment": "center",
       "blockClass": "vintage"
-    }
-  },
-  "info-card#suspenso": {
-    "props": {
-      "isFullModeStyle": false,
-      "textPosition": "right",
-      "callToActionMode": "button",
-      "callToActionText": "Chat",
-      "callToActionUrl": "/about-us",
-      "textAlignment": "center",
-      "blockClass": "suspenso"
     }
   },
   "info-card#button-left": {
