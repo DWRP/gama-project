@@ -1,1 +1,1 @@
-web: npm start --prefix ./store-backend
+web: npm start
