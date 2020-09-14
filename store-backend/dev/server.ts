@@ -1,5 +1,6 @@
 import express from 'express'
 import cors,{ CorsOptions } from 'cors'
+import path from 'path'
 
 import routes from './routes'
 
@@ -16,6 +17,6 @@ app.use(cors(corsOptions))
 app.use(express.json())
 app.use(routes)
 
-app.use(express.static('public'))
+app.use(express.static(path.resolve(__dirname,'public')))
 
 app.listen(8080)
