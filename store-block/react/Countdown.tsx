@@ -1,7 +1,8 @@
 import React from 'react'
 import ChatBot from 'react-simple-chatbot';
 import styled, { ThemeProvider } from 'styled-components';
-// import { FaHeadset } from 'react-icons/fa'
+import Informations from './Informations'
+// import axios from 'axios'
 
 interface CountdownProps { }
 
@@ -25,25 +26,31 @@ const theme = {
   userFontColor: '#4a4a4a',
 };
 
-const steps = [
-  {
-    id: '1',
-    message: 'Qual numero do seu pedido?',
-    trigger: '2',
-  },
-  {
-    id: '2',
-    user: true,
-    trigger: '3',
-  },
-  {
-    id: '3',
-    message: 'Pedido {previousValue}, está em separação!',
-    end: true,
-  },
-]
+
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ }) => {
 
+  const steps = [
+    {
+      id: '1',
+      message: 'Por favor, informe o ID do seu produto:',
+      trigger: '2',
+    },
+    {
+      id: '2',
+      user: true,
+      validator: (value:string)=>{
+        console.log(value)
+        localStorage.setItem('orderId',value)
+        return true
+      },
+      trigger: '3',
+    },
+    {
+      id: '3',
+      component: (<Informations />),
+      end: true
+    }
+  ]
   return (
     <>
       <ChatBox>
