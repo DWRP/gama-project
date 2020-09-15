@@ -5,8 +5,7 @@
   "description": "A model make by Ominix mini-framework",
   "repository": "https://github.com/DWRP/ominix-model",
   "scripts": {
-    "start": "node .",
-    "dev": "ts-node-dev new-backend/dev/server.ts"
+    "start": "node ."
   },
   "dependencies": {
     "cors": "^2.8.5",
