@@ -1,4 +1,3 @@
-import { json } from 'body-parser'
 import { Request, Response } from 'express'
 import api from '../../utils/api'
 
@@ -12,29 +11,28 @@ class OrderController {
 
     async show (req:Request,res:Response){
         const { shop, id } = req.params
-        let erro = ""
 
-        const worspace = shop?shop+"--":""
-        const result = await api.get(`https://${worspace}${process.env.API_URL}/oms/pvt/orders/${id}`)
-        
-        const jsonResult = JSON.parse(JSON.stringify(result.data))
         let data = {}
 
-        if(jsonResult.error){
-            data = {
+        const worspace = shop?shop+"--":""
+
+        const result = await api.get(`https://${worspace}${process.env.API_URL}/oms/pvt/orders/${id}`).then(item=>{return {...item.data,erro:""}}).catch(()=>{
+            return {
                 orderId : "",
                 statusDescription : "",
                 value : "",
-                erro : jsonResult.error.message
+                erro : "Pedido não encontrado"
             }
-        }else{
-            const {orderId, statusDescription, value } = jsonResult
-            data = {
-                orderId,
-                statusDescription,
-                value,
-                erro : ""
-            }
+        })
+        
+        const jsonResult = JSON.parse(JSON.stringify(result))
+       
+        const {orderId, statusDescription, value, erro } = jsonResult
+        data = {
+            orderId,
+            statusDescription,
+            value,
+            erro
         }
 
         return res.json(data)

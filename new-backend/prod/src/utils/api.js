@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var axios_1 = __importDefault(require("axios"));
 require('dotenv').config();
-var _a = process.env, API_URL = _a.API_URL, APP_KEY = _a.APP_KEY, APP_TOKEN = _a.APP_TOKEN;
+var _a = process.env, APP_KEY = _a.APP_KEY, APP_TOKEN = _a.APP_TOKEN;
 var api = axios_1.default.create({
     headers: {
         "Content-Type": "application/json",

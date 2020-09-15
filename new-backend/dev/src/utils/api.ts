@@ -2,7 +2,7 @@ import axios from 'axios'
 
 require('dotenv').config()
 
-const { API_URL, APP_KEY, APP_TOKEN } = process.env
+const { APP_KEY, APP_TOKEN } = process.env
 
 const api = axios.create({
     headers:{
