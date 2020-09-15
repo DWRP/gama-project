@@ -13,8 +13,9 @@ var whitelist = (_a = process.env.WORKSPACES) === null || _a === void 0 ? void 0
 var corsOptions = {
     origin: whitelist
 };
+
 app.use(cors_1.default());
 app.use(express_1.default.json());
 app.use(routes_1.default);
 app.use(express_1.default.static(path_1.default.resolve(__dirname, 'public')));
-app.listen(process.env.PORT || 8080);
+app.listen(8080);

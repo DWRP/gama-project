@@ -54,21 +54,35 @@ var OrderController = /** @class */ (function () {
     };
     OrderController.prototype.show = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, shop, id, worspace, result, _b, orderId, statusDescription, value, data;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
+            var _a, shop, id, erro, worspace, result, jsonResult, data, orderId, statusDescription, value;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
                     case 0:
                         _a = req.params, shop = _a.shop, id = _a.id;
+                        erro = "";
                         worspace = shop ? shop + "--" : "";
                         return [4 /*yield*/, api_1.default.get("https://" + worspace + process.env.API_URL + "/oms/pvt/orders/" + id)];
                     case 1:
-                        result = _c.sent();
-                        _b = JSON.parse(JSON.stringify(result.data)), orderId = _b.orderId, statusDescription = _b.statusDescription, value = _b.value;
-                        data = {
-                            orderId: orderId,
-                            statusDescription: statusDescription,
-                            value: value
-                        };
+                        result = _b.sent();
+                        jsonResult = JSON.parse(JSON.stringify(result.data));
+                        data = {};
+                        if (jsonResult.error) {
+                            data = {
+                                orderId: "",
+                                statusDescription: "",
+                                value: "",
+                                erro: jsonResult.error.message
+                            };
+                        }
+                        else {
+                            orderId = jsonResult.orderId, statusDescription = jsonResult.statusDescription, value = jsonResult.value;
+                            data = {
+                                orderId: orderId,
+                                statusDescription: statusDescription,
+                                value: value,
+                                erro: ""
+                            };
+                        }
                         return [2 /*return*/, res.json(data)];
                 }
             });
