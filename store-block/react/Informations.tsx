@@ -36,8 +36,8 @@ const Informations: StorefrontFunctionComponent<InformationsProps> = ({ }) => {
 }
 
 Informations.schema = {
-  title: 'Xcinfos',
-  description: 'Xcoders ChatBot Infos',
+  title: 'ChatBotInfos',
+  description: 'Testando ChatBotInfos',
   type: 'object',
   properties: {},
 }

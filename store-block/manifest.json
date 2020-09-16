@@ -1,14 +1,10 @@
 {
-  "vendor": "hiringcoders9",
-  "name": "xcbot",
-  "version": "1.0.0",
-  "title": "Xcbot",
-  "description": "Xcbot Chatbot",
+  "vendor": "vtex",
+  "name": "countdown",
+  "version": "0.0.1",
+  "title": "Countdown",
+  "description": "Countdown component",
   "defaultLocale": "pt-BR",
-  "billingOptions": {
-    "free": true,
-    "termsURL": "https://vtex.com.br"
-  },
   "builders": {
     "messages": "1.x",
     "store": "0.x",
