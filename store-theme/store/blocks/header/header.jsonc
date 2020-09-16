@@ -36,8 +36,7 @@
     },
     "children": [
       "vtex.menu@2.x:menu#websites",
-      "flex-layout.col#spacer",
-      "vtex.menu@2.x:menu#institutional"
+      "flex-layout.col#spacer"
     ]
   },
   "flex-layout.col#spacer": {
@@ -92,7 +91,7 @@
     "props": {
       "title": "Logo",
       "href": "/",
-      "url": "https://storecomponents.vteximg.com.br/arquivos/store-theme-logo.png",
+      "url": "https://hiringcoders9.vtexassets.com/assets/vtex.file-manager-graphql/images/cdb519b8-834e-4885-824d-537f8a30d916___c611f97a928238a7d9eb59a4cb54e9b1.png",
       "width": "180"
     }
   },

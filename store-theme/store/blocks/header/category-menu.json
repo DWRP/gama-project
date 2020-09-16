@@ -158,10 +158,10 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/about-us",
+        "href": "https://xcoders.netlify.app",
         "noFollow": true,
-        "tagTitle": "About us",
-        "text": "About us"
+        "tagTitle": "Sobre nós",
+        "text": "Sobre nós"
       }
     }
   },
