@@ -12,13 +12,30 @@
 
 #### Projeto feito apenas para fins educativos para o programa HiringCoders em parceria com a Vtex
 
+<h1 align="center">
+    <img alt="Example" title="Example" src="store-theme/assets/vtex-banner.jpg" width="90%" />
+</h1>
 
 ## 💻 Entenda o Projeto
 
-mensagem aqui
+O objetivo do grupo é desenvolver um canal
+de comunicação baseado em Chatbot, que
+possa “plugar" em outros marketplaces, e
+que resolva o problema de tempo de resposta de atendimento e dificuldade em acompanhar a situação do pedido.
+
+Nosso chatbot foi criado com intuito de facilitar a vida das pessoas,
+proporcionando transparência sobre o pedido, agilidade no atendimento
+e melhor interação com o cliente.
+
+Fornecemos as ferramentas necessárias para responder os visitantes de
+forma rápida e eficiente com menos distrações proporcionando serviço
+de suporte ao cliente 24 horas.
 
 <h1 align="center">
-    <img alt="Example" title="Example" src="store-theme/assets/vtex-banner.jpg" width="90%" />
+    <img alt="Example" title="Example" src="store-theme/assets/example1.png" width="90%" />
+</h1>
+<h1 align="center">
+    <img alt="Example" title="Example" src="store-theme/assets/example2.png" width="90%" />
 </h1>
 
 ## :clipboard: Principais conceitos utilizados
@@ -30,5 +47,6 @@ Linguagens utilizadas
 - TypeScript
 - NodeJS
 - React
-- VTEX
+  - react-simple-chatbot
+- Api Rest / VTEX
 
