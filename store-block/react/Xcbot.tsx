@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import Informations from './Informations'
 // import axios from 'axios'
 
-interface CountdownProps { }
+interface XcbotProps { }
 
 const ChatBox = styled.div`
   display: block;
@@ -27,7 +27,7 @@ const theme = {
 };
 
 
-const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ }) => {
+const Xcbot: StorefrontFunctionComponent<XcbotProps> = ({ }) => {
 
   const steps = [
     {
@@ -62,11 +62,11 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ }) => {
   );
 }
 
-Countdown.schema = {
-  title: 'ChatBot',
-  description: 'Testando ChatBoot',
+Xcbot.schema = {
+  title: 'Xcbot',
+  description: 'Xcoders ChatBot',
   type: 'object',
   properties: {},
 }
 
-export default Countdown
+export default Xcbot
