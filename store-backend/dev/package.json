@@ -1,0 +1,25 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "main": "server.ts",
+  "description": "A model to Ominix mini-framework",
+  "repository": "https://github.com/DWRP/ominix-model",
+  "scripts": {
+    "start": "ts-node .",
+    "dev": "ts-node-dev --ignore-watch node_modules ."
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.6",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.9.3"
+  },
+  "license": "MIT"
+}
