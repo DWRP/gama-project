@@ -17,7 +17,7 @@ const Informations: StorefrontFunctionComponent<InformationsProps> = ({ }) => {
 
   useEffect(() => {
     async function loading() {
-      const result = await axios.get(`http://xcoders-gama.herokuapp.com/orders/${orderId}`)
+      const result = await axios.get(`https://xcoders-gama.herokuapp.com/orders/${orderId}`)
       console.log(result.data)
       const requisition: Array<Orders> = [result.data]
       setData(requisition)
