@@ -11,7 +11,6 @@ interface Orders {
   erro: string
 }
 
-
 const Informations: StorefrontFunctionComponent<InformationsProps> = ({ }) => {
   const [data, setData] = useState<Array<Orders>>([])
   const orderId = localStorage.getItem('orderId')
@@ -28,9 +27,15 @@ const Informations: StorefrontFunctionComponent<InformationsProps> = ({ }) => {
 
   return (
     <>
-      <div>
-        {data !== [] ? data.map((item: Orders) => item.erro ? item.erro : <div><p>ID: {item.orderId}</p><p>Status: {item.statusDescription}</p><p>Valor: {item.value}</p></div>) : <Loading />}
-      </div>
+      {
+        data !== [] ? data.map((item: Orders) => item.erro ? item.erro : <div>
+          <h3>Informações do Pedido</h3>
+          <p>Numero: {item.orderId}</p>
+          <p>Status: {item.statusDescription}</p>
+          <p>Valor: R$ {item.value}</p>
+        </div>
+        ) : <Loading />
+      }
     </>
   );
 }
