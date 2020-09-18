@@ -1,0 +1,16 @@
+{
+  "store.home": { 
+    "blocks": [
+      "rich-text",
+      "chatbot"
+    ]
+  },
+  "rich-text": { 
+    "props": { 
+      "text": "VTEX Store Framework",
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "font": "t-heading-1"
+    }
+  }
+}
