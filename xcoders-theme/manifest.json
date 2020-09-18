@@ -1,7 +1,7 @@
 {
-  "vendor": "vtex",
-  "name": "minimumtheme",
-  "version": "0.1.0",
+  "vendor": "hiringcoders9",
+  "name": "xtheme",
+  "version": "0.0.1",
   "builders": {
     "styles": "2.x",
     "store": "0.x",
@@ -11,7 +11,7 @@
     "postreleasy": "vtex publish --verbose"
   },
   "dependencies": {
-    "hiringcoders9.bot":"0.x",
+    "hiringcoders9.bot": "0.x",
     "vtex.store": "2.x",
     "vtex.store-header": "2.x",
     "vtex.product-summary": "2.x",
