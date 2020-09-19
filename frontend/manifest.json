@@ -1,19 +1,17 @@
 {
-  "vendor": "vtex",
-  "name": "store-theme",
-  "version": "3.38.0",
+  "vendor": "hiringcoders9",
+  "name": "xtheme",
+  "version": "0.0.1",
   "builders": {
     "styles": "2.x",
     "store": "0.x",
-    "sitemap": "0.x",
     "docs": "0.x"
   },
-  "mustUpdateAt": "2018-09-05",
   "scripts": {
     "postreleasy": "vtex publish --verbose"
   },
   "dependencies": {
-    "vtex.countdown": "0.x",
+    "hiringcoders9.bot": "0.x",
     "vtex.store": "2.x",
     "vtex.store-header": "2.x",
     "vtex.product-summary": "2.x",

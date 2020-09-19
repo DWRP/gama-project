@@ -1,9 +1,9 @@
 import React from 'react'
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
-import Informations from './Informations'
+import Informations from './components/Informations/Informations'
 
-interface CountdownProps { }
+interface XcbotProps { }
 
 const bubbleStyle = {
   fontSize: '16px',
@@ -30,7 +30,7 @@ const theme = {
 };
 
 
-const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ }) => {
+const Xcbot: StorefrontFunctionComponent<XcbotProps> = ({ }) => {
 
   const steps = [
     {
@@ -130,11 +130,11 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ }) => {
   );
 }
 
-Countdown.schema = {
+Xcbot.schema = {
   title: 'ChatBot',
   description: 'Testando ChatBoot',
   type: 'object',
   properties: {},
 }
 
-export default Countdown
+export default Xcbot

@@ -1,7 +1,7 @@
 {
   "name": "xcoders-api",
   "version": "1.0.0",
-  "main": "new-backend/prod/server.js",
+  "main": "backend/prod/server.js",
   "description": "A model make by Ominix mini-framework",
   "repository": "https://github.com/DWRP/ominix-model",
   "scripts": {
