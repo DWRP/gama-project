@@ -32,10 +32,10 @@ forma rápida e eficiente com menos distrações proporcionando serviço
 de suporte ao cliente 24 horas.
 
 <h1 align="center">
-    <img alt="Example" title="Example" src="store-theme/assets/example1.png" width="90%" />
+    <img alt="Example" title="Example" src="frontend/assets/example1.png" width="90%" />
 </h1>
 <h1 align="center">
-    <img alt="Example" title="Example" src="store-theme/assets/example2.png" width="90%" />
+    <img alt="Example" title="Example" src="frontend/assets/example2.png" width="90%" />
 </h1>
 
 ## :clipboard: Principais conceitos utilizados
