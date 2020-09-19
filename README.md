@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="XCodersVtex" title="XCodersVtex" src='store-theme/assets/logo.png' width="230px"/>
+    <img alt="XCodersVtex" title="XCodersVtex" src='frontend/assets/logo.png' width="230px"/>
 </h1>
 
 <p align="center">
@@ -13,7 +13,7 @@
 #### Projeto feito apenas para fins educativos para o programa HiringCoders em parceria com a Vtex
 
 <h1 align="center">
-    <img alt="Example" title="Example" src="store-theme/assets/vtex-banner.jpg" width="90%" />
+    <img alt="Example" title="Example" src="frontend/assets/vtex-banner.jpg" width="90%" />
 </h1>
 
 ## 💻 Entenda o Projeto
