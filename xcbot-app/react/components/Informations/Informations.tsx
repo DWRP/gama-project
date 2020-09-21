@@ -40,11 +40,36 @@ const Informations: StorefrontFunctionComponent<InformationsProps> = ({ }) => {
   );
 }
 
+<<<<<<< HEAD
+    return (
+      <div style={{display:"flex !important",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
+          <h4>Carregando informação</h4>
+          <Loading />
+      </div>
+    )
+  }else{
+    return (
+      <>
+        {
+          data.map((item: Orders) => item.erro ? item.erro : <div key={item.orderId}>
+              <h3>Informações do Pedido</h3>
+              <p>Numero: {item.orderId}</p>
+              <p>Status: {item.statusDescription}</p>
+              <p>Valor: R$ {item.value}</p>
+            </div>
+          )
+        }
+      </>
+    );
+  }
+  
+=======
 Informations.schema = {
   title: 'ChatBotInfos',
   description: 'Testando ChatBotInfos',
   type: 'object',
   properties: {},
+>>>>>>> master
 }
 
 export default Informations

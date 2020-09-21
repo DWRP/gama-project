@@ -3,6 +3,13 @@ import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 import Informations from './components/Informations/Informations'
 
+<<<<<<< HEAD
+
+interface XcbotProps {
+  chatName: string
+  avatarIcon: string
+  chatIcon: string
+=======
 interface XcbotProps { }
 
 const bubbleStyle = {
@@ -12,6 +19,7 @@ const bubbleStyle = {
 const floatingStyle = {
   right: '8px',
   bottom: '8px'
+>>>>>>> master
 }
 const bubbleOptionStyle = {
   background: '#5fb55e',
