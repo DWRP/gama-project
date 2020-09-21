@@ -5,6 +5,7 @@ import Theme from './components/Theme'
 import Informations from './components/Informations/Informations'
 import stepsBase from './components/Steps'
 
+
 interface XcbotProps {
   chatName: string
   avatarIcon: string

@@ -48,6 +48,7 @@ const Informations = () => {
       </>
     );
   }
+  
 }
 
 export default Informations
