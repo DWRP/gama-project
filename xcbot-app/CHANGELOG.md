@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BOT CHANGES
 
 ## 0.1.5 - bot upgrade to application vtex
@@ -10,3 +11,5 @@
 
 - Upgrade new version to deploy
 - Fix bugs in bot app
+=======
+>>>>>>> master

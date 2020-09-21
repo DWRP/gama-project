@@ -1,7 +1,7 @@
 {
   "store.home": {
     "blocks": [
-      "chatbot",
+      "countdown",
       "list-context.image-list#demo",
       "__fold__.experimentalLazyAssets",
       "flex-layout.row#deals",
