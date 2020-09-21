@@ -69,7 +69,6 @@ const steps = (ChatComponent:StorefrontFunctionComponent)=>{
       trigger: 'type_select',
     }
   ])
-  
 }
 
 export default steps
