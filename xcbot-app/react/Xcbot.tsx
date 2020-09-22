@@ -1,48 +1,99 @@
-import React, { Component } from 'react';
-import Amplify from 'aws-amplify';
-import { ChatBot, AmplifyTheme } from './node_modules/aws-amplify-react';
-import awsconfig from './aws-exports';
+import React, { useState } from 'react';
+import Amplify, { Interactions } from 'aws-amplify';
+import { ChatFeed, Message } from 'react-chat-ui'
+import awsconfig from './aws-exports'
+import { styles, ChatBot } from './utils/styles'
+import awsmobile from './aws-exports';
+import styled from 'styled-components';
 
 Amplify.configure(awsconfig);
 
-// Imported default theme can be customized by overloading attributes
-const myTheme = {
-  ...AmplifyTheme,
-  sectionHeader: {
-    ...AmplifyTheme.sectionHeader,
-    backgroundColor: '#ff6600'
+const GlobalStyle = styled.div`
+  #chat-panel {
+    height: 350px;
   }
-};
+`
+interface ChatProps { }
+const Chat: StorefrontFunctionComponent<ChatProps> = ({ }) => {
+  let newMessages
 
-class App extends Component {
-  handleComplete(err: any, confirmation: object) {
-    if (err) {
-      alert('Bot conversation failed')
-      return;
+  const [state, setState] = useState({
+    input: '',
+    finalMessage: '',
+    messages: [
+      new Message({
+        id: 1,
+        message: "Olá, em que posso te ajuda hoje?",
+      })
+    ]
+  })
+
+  async function submitMessage() {
+    const { input } = state
+    if (input === '') return
+
+    const message = new Message({
+      id: 0,
+      message: input,
+    })
+
+    newMessages = [...state.messages, message]
+
+    const response = await Interactions.send(awsmobile.aws_bots_config[0].name, input);
+
+    const responseMessage = new Message({
+      id: 1,
+      message: response.message
+    })
+
+    newMessages = [...newMessages, responseMessage]
+
+    setState({ ...state, messages: newMessages, input: '' })
+
+    if (response.dialogState === 'Fulfilled') {
+      if (response.intentName === 'OrderFlowers') {
+        const finalMessage = `a`
+        setState({ ...state, finalMessage })
+      }
     }
-
-    alert('Success: ' + JSON.stringify(confirmation, null, 2));
-    return 'Trip booked. Thank you! what would you like to do next?';
   }
 
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to ChatBot Demo</h1>
-        </header>
-        <ChatBot
-          title="My Bot"
-          theme={myTheme}
-          botName="OrderFlowers_dev"
-          welcomeMessage="Welcome, how can I help you today?"
-          onComplete={this.handleComplete.bind(this)}
-          clearOnComplete={true}
-          conversationModeOn={false}
-        />
+  function onChange(e: any) {
+    const input = e.target.value
+    setState({ ...state, input })
+  }
+
+  const _handleKeyPress = (e: any) => {
+    if (e.key === 'Enter') {
+      submitMessage()
+    }
+  }
+
+  return (
+    <div style={ChatBot}>
+      <header style={styles.header} >
+        <p style={styles.headerTitle}>
+          ChatBot - Joseph
+        </p>
+      </header>
+      <div style={styles.messagesContainer} >
+        <GlobalStyle>
+          <ChatFeed
+            messages={state.messages}
+            hasInputField={false}
+            bubbleStyles={styles.bubbleStyles}
+          />
+          <input
+            onKeyPress={_handleKeyPress}
+            onChange={onChange}
+            style={styles.input}
+            value={state.input}
+            placeholder="Digite aqui sua mensagem"
+          />
+        </GlobalStyle>
       </div>
-    );
-  }
+    </div>
+  )
 }
 
-export default App;
+export default Chat;
