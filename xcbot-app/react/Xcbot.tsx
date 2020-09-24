@@ -47,7 +47,7 @@ const Chat: StorefrontFunctionComponent<ChatProps> = ({ chatName, avatarIcon, pl
   }
 
   useEffect(() => {
-    addResponseMessage('Olá, em que posso te ajudar?')
+    addResponseMessage('Olá, eu sou o Joseph, seu bot pessoal, em que posso te ajudar hoje?')
     renderCustomComponent(() => {
       function handleOption(option: string) {
         addUserMessage(option)
@@ -55,13 +55,13 @@ const Chat: StorefrontFunctionComponent<ChatProps> = ({ chatName, avatarIcon, pl
       }
       return (
         <div>
-          <button onClick={() => {
+          <button className="button-bot-option" onClick={() => {
             handleOption('Informações sobre meu pedido')
           }}>Info Pedido</button>
-          <button onClick={() => {
+          <button className="button-bot-optison" onClick={() => {
             handleOption('Comprar produtos')
           }}>Comprar Produtos</button>
-          <button onClick={() => {
+          <button className="button-bot-option" onClick={() => {
             handleOption('Rastrear meu pedido')
           }}>Rastreio</button>
         </div>
