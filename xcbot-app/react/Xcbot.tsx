@@ -63,6 +63,7 @@ const Chat: StorefrontFunctionComponent<ChatProps> = ({ }) => {
 
     />
   )
+
 }
 
 export default Chat;
