@@ -1,98 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Amplify, { Interactions } from 'aws-amplify';
-import { ChatFeed, Message } from 'react-chat-ui'
-import awsconfig from './aws-exports'
-import { styles, ChatBot } from './utils/styles'
-import awsmobile from './aws-exports';
-import styled from 'styled-components';
+import awsconfig from './aws-exports';
+import { Widget, addResponseMessage, renderCustomComponent } from 'react-chat-widget';
+import './utils/style.global.css';
 
 Amplify.configure(awsconfig);
 
-const GlobalStyle = styled.div`
-  #chat-panel {
-    height: 350px;
-  }
-`
 interface ChatProps { }
-const Chat: StorefrontFunctionComponent<ChatProps> = ({ }) => {
-  let newMessages
+interface CardProps {
+  img?: string
+  title?: string
+}
 
-  const [state, setState] = useState({
-    input: '',
-    finalMessage: '',
-    messages: [
-      new Message({
-        id: 1,
-        message: "Olá, em que posso te ajuda hoje?",
-      })
-    ]
-  })
+const Card = (props: any) => {
+  let [data, setData] = useState<CardProps[]>([])
 
-  async function submitMessage() {
-    const { input } = state
-    if (input === '') return
-
-    const message = new Message({
-      id: 0,
-      message: input,
+  useEffect(() => {
+    let newData: CardProps[] = []
+    Object.keys(props).map((key: any) => {
+      newData.push({ img: props[key].imageUrl, title: props[key].title })
     })
 
-    newMessages = [...state.messages, message]
-
-    const response = await Interactions.send(awsmobile.aws_bots_config[0].name, input);
-
-    const responseMessage = new Message({
-      id: 1,
-      message: response.message
-    })
-
-    newMessages = [...newMessages, responseMessage]
-
-    setState({ ...state, messages: newMessages, input: '' })
-
-    if (response.dialogState === 'Fulfilled') {
-      if (response.intentName === 'OrderFlowers') {
-        const finalMessage = `a`
-        setState({ ...state, finalMessage })
-      }
-    }
-  }
-
-  function onChange(e: any) {
-    const input = e.target.value
-    setState({ ...state, input })
-  }
-
-  const _handleKeyPress = (e: any) => {
-    if (e.key === 'Enter') {
-      submitMessage()
-    }
-  }
+    setData(newData)
+  }, [])
 
   return (
-    <div style={ChatBot}>
-      <header style={styles.header} >
-        <p style={styles.headerTitle}>
-          ChatBot - Joseph
-        </p>
-      </header>
-      <div style={styles.messagesContainer} >
-        <GlobalStyle>
-          <ChatFeed
-            messages={state.messages}
-            hasInputField={false}
-            bubbleStyles={styles.bubbleStyles}
-          />
-          <input
-            onKeyPress={_handleKeyPress}
-            onChange={onChange}
-            style={styles.input}
-            value={state.input}
-            placeholder="Digite aqui sua mensagem"
-          />
-        </GlobalStyle>
-      </div>
+    <div>
+      {
+        data.map((item: CardProps, index: number) => <div key={index}><h3>{item.title}</h3><img src={item.img} alt="" style={{ maxWidth: "40px", maxHeight: "40px", }} /></div>)
+      }
     </div>
+  )
+}
+
+const Chat: StorefrontFunctionComponent<ChatProps> = ({ }) => {
+
+  async function handleMsg(input: any) {
+
+    const response = await Interactions.send(awsconfig.aws_bots_config[0].name, input);
+    console.log(response)
+    if (response.responseCard) {
+      addResponseMessage(response.message)
+      renderCustomComponent(Card, response.responseCard.genericAttachments)
+      addResponseMessage("Essas são as opções")
+    }
+    else {
+      addResponseMessage(response.message)
+    }
+  }
+
+  useEffect(() => {
+    addResponseMessage('Olá, em que posso te ajudar?')
+  }, [])
+  return (
+    <Widget
+      handleNewUserMessage={(event: any) => handleMsg(event)}
+      title="Chatbot"
+      senderPlaceHolder="Escreva sua mensagem"
+      subtitle={false}
+      profileAvatar="https://hiringcoders9.vtexassets.com/assets/vtex.file-manager-graphql/images/133ad9db-b1d4-4fa8-878a-00635dbaaa60___2ed90089707038a3e798b66150cdd1c5.png"
+      showCloseButton={true}
+
+    />
   )
 }
 
