@@ -10,12 +10,12 @@ export const Card = (props: any) => {
   }, [])
 
   return (
-    <div>
+    <div className="box-container">
       {
         (data ?
           data.map((item: CardProps) => {
             return (
-              <div key={item.id}>
+              <div className="box-container-card" key={item.id}>
                 <h4>{item.title}</h4>
                 <img src={item.imageUrl} alt="" />
                 <h5>R$ {item.price}</h5>
@@ -23,9 +23,8 @@ export const Card = (props: any) => {
             )
           })
           :
-          'Produto não encontrado'
+          <div>Produto não encontrado</div>
         )
-
       }
     </div>
   )
