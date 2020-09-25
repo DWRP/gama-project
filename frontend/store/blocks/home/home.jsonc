@@ -5,7 +5,6 @@
       "list-context.image-list#demo",
       "__fold__.experimentalLazyAssets",
       "flex-layout.row#deals",
-      "flex-layout.row#collection",
       "rich-text#shelf-title",
       "flex-layout.row#shelf",
       "newsletter"
@@ -79,30 +78,6 @@
       "infinite": true,
       "fullWidth": false,
       "blockClass": "shelf"
-    }
-  },
-  "flex-layout.row#collection": {
-    "children": [
-      "flex-layout.col#collection"
-    ]
-  },
-  "flex-layout.col#collection": {
-    "children": [
-      "info-card--first",
-      "info-card--second"
-    ]
-  },
-  "info-card": {
-    "props": {
-      "id": "info-card-example",
-      "isFullModeStyle": false,
-      "textPosition": "left",
-      "imageUrl": "https://storecomponents.vteximg.com.br/arquivos/banner-infocard2.png",
-      "headline": "Clearance Sale",
-      "callToActionText": "DISCOVER",
-      "callToActionUrl": "/sale/d",
-      "blockClass": "info-card-example",
-      "textAlignment": "center"
     }
   }
 }
