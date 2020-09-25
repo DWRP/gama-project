@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { OrderProps } from '../../utils/interfaces';
-import { schema } from '../../utils/schema';
 
 export const Order = (props: any) => {
   let [data, setData] = useState<OrderProps[]>([])
-
-  console.log(props);
-
+  
   useEffect(() => {
     let newData: OrderProps[] = JSON.parse(props.response.message)
+
     setData(newData)
   }, [])
-
+  
   return (
     <div>
       {
@@ -27,7 +25,6 @@ export const Order = (props: any) => {
                     </div>
                   </div>
                 </div>
-                {console.log(item.erro)}
               </>
             )
           } else {
@@ -57,5 +54,3 @@ export const Order = (props: any) => {
     </div>
   )
 }
-
-Order.schema = schema;

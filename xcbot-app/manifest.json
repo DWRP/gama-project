@@ -1,7 +1,7 @@
 {
   "vendor": "hiringcoders9",
   "name": "bot",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "title": "Xcoders Chatbot",
   "description": "A Generic Chatbot to xcoders",
   "defaultLocale": "pt-BR",

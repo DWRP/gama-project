@@ -1,8 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 
-export const ButtonSum = () => {
+export const ButtonSum = (props:any) => {
   let [input, setInput] = useState<number>(0);
+  
+  useEffect(()=>{
+    const storage = localStorage.getItem('cart') || '[]'
+    const cart = JSON.parse(storage)
+    let newCart
+    if(cart){
+      let filter = cart.filter((item:{id:number,qtd:number})=>item.id!==props.id)
+
+      newCart = [...filter,{id:props.id,qtd:input}]
+    }else{
+      newCart = [{id:props.id,qtd:input}]
+    }
+
+    localStorage.setItem('cart',JSON.stringify(newCart))
+  },[input])
 
   const increment = (input: any, setInput: Function) => {
     let total = input + 1;
