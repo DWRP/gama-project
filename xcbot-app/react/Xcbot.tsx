@@ -63,7 +63,7 @@ const Chat: StorefrontFunctionComponent<ChatProps> = ({ chatName, avatarIcon, pl
             }}>Info Pedido</button>
             <button className="button-bot-option" onClick={() => {
               handleOption('Comprar produtos')
-            }}>Comprar</button>
+            }}>Comprsar</button>
             <button className="button-bot-option" onClick={() => {
               handleOption('Rastrear meu pedido')
             }}>Rastrear</button>
