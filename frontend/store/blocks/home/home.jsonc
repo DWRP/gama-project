@@ -5,10 +5,57 @@
       "list-context.image-list#demo",
       "__fold__.experimentalLazyAssets",
       "flex-layout.row#deals",
+      "flex-layout.row#gridImages",
       "rich-text#shelf-title",
       "flex-layout.row#shelf",
       "newsletter"
     ]
+  },
+  "flex-layout.row#gridImages": {
+    "props": {
+      "horizontalAlign": "center",
+      "rowGap": 5,
+      "colGap": 5
+    },
+    "children": [
+      "flex-layout.col#imageLeft",
+      "flex-layout.col#imageRight"
+    ]
+  },
+  "flex-layout.col#imageLeft": {
+    "children": [
+      "image#category1"
+    ]
+  },
+  "image#category1": {
+    "props": {
+      "src": "assets/categorybannerFull.png",
+      "blockClass": "fullBanner1",
+      "maxHeight" :748,
+      "maxWidth": 748
+    }
+  },
+  "flex-layout.col#imageRight": {
+    "children": [
+      "image#category2",
+      "image#category3"
+    ]
+  },
+  "image#category2": {
+    "props": {
+      "src": "asssets/categoryBannerSmall1.png",
+      "blockClass": "smallBanner2",
+      "maxHeight" :365,
+      "maxWidth": 748
+    }
+  },
+  "image#category3": {
+    "props": {
+      "src": "asssets/categoryBannerSmall1.png",
+      "blockClass": "smallBanner3",
+      "maxHeight" :365,
+      "maxWidth": 748
+    }
   },
   "shelf#home": {
     "blocks": [
@@ -20,7 +67,6 @@
       "slider-layout#demo-images"
     ],
     "props": {
-      "height": 720,
       "images": [
         {
           "image": "https://hiringcoders9.vtexassets.com/assets/vtex.file-manager-graphql/images/dd9ea628-8886-49da-9a8d-68d32d06292c___d5dbedbbbdfc7f34bc8a3c7d62e0f423.png",
@@ -42,13 +88,12 @@
       },
       "infinite": true,
       "showNavigationArrows": "desktopOnly",
-      "blockClass": "carousel",
-      "fullWidth": true
+      "blockClass": "carousel"
     }
   },
   "rich-text#shelf-title": {
     "props": {
-      "text": "## Porque se vestir pode ser simples ",
+      "text": "## Porque se vestir pode ser simples",
       "blockClass": "shelfTitle"
     }
   },
@@ -71,7 +116,7 @@
   "slider-layout#demo-products": {
     "props": {
       "itemsPerPage": {
-        "desktop": 5,
+        "desktop": 4,
         "tablet": 3,
         "phone": 1
       },

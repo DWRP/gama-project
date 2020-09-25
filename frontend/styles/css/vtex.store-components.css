@@ -54,6 +54,7 @@
   color: #fff;
   border: none;
   margin-right: -24px;
+  border-radius: 5px;
 }
 
 .buttonContainer {
@@ -63,6 +64,21 @@
 .imageElement--storePrint {
   max-height: 300px;
   margin-bottom: 20px;
+}
+
+.imageElement--fullBanner1 {
+  width: 748px;
+  height: 748px;
+}
+
+.imageElement--smallBanner2 {
+  width: 748px;
+  max-height: 364;
+}
+
+.imageElement--smallBanner3 {
+  width: 748px;
+  max-height: 364;
 }
 
 .skuSelectorContainer {
