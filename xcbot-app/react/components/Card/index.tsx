@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { CardProps } from '../../utils/interfaces';
-import { FaPlus, FaMinus, FaCartPlus } from 'react-icons/fa';
-
+import { FaCartPlus } from 'react-icons/fa';
+import {
+  ButtonSum
+}
+  from './Button';
 export const Card = (props: any) => {
   let [data, setData] = useState<CardProps[]>([]);
   let finishOrder = false;
@@ -24,11 +27,7 @@ export const Card = (props: any) => {
                     <img src={item.imageUrl} width="100%" />
                     <p className="title-box">{item.title}</p>
                     <p className="price-box"><span>R$</span> {item.price}</p>
-                    <div className="buttons-qtd-box">
-                      <button className="minus"><FaMinus /></button>
-                      <input type="text" name="qtd" value="0" />
-                      <button className="plus"><FaPlus /></button>
-                    </div>
+                    <ButtonSum key={item.id} />
                   </div>
                 )
               })

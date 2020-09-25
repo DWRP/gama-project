@@ -41,7 +41,31 @@ const Chat: StorefrontFunctionComponent<ChatProps> = ({ chatName, avatarIcon, pl
       renderCustomComponent(Order, { response, avatarIcon })
       return;
     }
-
+    if (response.intentName == 'Help') {
+      renderCustomComponent(() => {
+        function handleOption(option: string) {
+          addUserMessage(option)
+          handleMsg(option)
+        }
+        return (
+          <div className="sug-container">
+            <h5>Sugestões:</h5>
+            <div className="button-container">
+              <button className="button-bot-option" onClick={() => {
+                handleOption('Informações sobre meu pedido')
+              }}>Info Pedido</button>
+              <button className="button-bot-option" onClick={() => {
+                handleOption('Comprar produtos')
+              }}>Comprar</button>
+              <button className="button-bot-option" onClick={() => {
+                handleOption('Rastrear meu pedido')
+              }}>Rastrear</button>
+            </div>
+          </div>
+        )
+      }, '')
+      return;
+    }
     addResponseMessage(response.message)
 
   }

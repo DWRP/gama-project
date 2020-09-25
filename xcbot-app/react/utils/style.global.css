@@ -223,7 +223,7 @@
         padding: 0 0 15px;
     }
     .rcw-conversation-container .rcw-close-button {
-        background-color: #35cce6;
+        background-color: transparent;
         border: 0;
         display: block;
         position: absolute;

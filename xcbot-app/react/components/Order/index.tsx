@@ -5,7 +5,7 @@ import { schema } from '../../utils/schema';
 export const Order = (props: any) => {
   let [data, setData] = useState<OrderProps[]>([])
 
-  console.log(props.avatarIcon);
+  console.log(props);
 
   useEffect(() => {
     let newData: OrderProps[] = JSON.parse(props.response.message)
