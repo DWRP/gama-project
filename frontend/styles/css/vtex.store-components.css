@@ -106,6 +106,21 @@
     margin-bottom: 0px;
     max-height: 600px;
   }
+
+  .imageElement--fullBanner1 {
+    width: 748px;
+    height: 1022px;
+  }
+  
+  .imageElement--smallBanner2 {
+    width: 748px;
+    max-height: 364;
+  }
+  
+  .imageElement--smallBanner3 {
+    width: 748px;
+    max-height: 364;
+  }
 }
 
 .productImagesContainer--quickview .carouselContainer {
