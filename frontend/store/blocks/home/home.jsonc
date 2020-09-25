@@ -42,12 +42,13 @@
       },
       "infinite": true,
       "showNavigationArrows": "desktopOnly",
-      "blockClass": "carousel"
+      "blockClass": "carousel",
+      "fullWidth": true
     }
   },
   "rich-text#shelf-title": {
     "props": {
-      "text": "## Produtos",
+      "text": "## Porque se vestir pode ser simples ",
       "blockClass": "shelfTitle"
     }
   },

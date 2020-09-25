@@ -1,69 +1,91 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import './utils/style.global.css';
+//AWS
 import Amplify, { Interactions } from 'aws-amplify';
 import awsconfig from './aws-exports';
-import { Widget, addResponseMessage, renderCustomComponent } from 'react-chat-widget';
-import './utils/style.global.css';
+//
+import {
+  Widget,
+  addResponseMessage,
+  addUserMessage,
+  renderCustomComponent
+}
+  from 'react-chat-widget';
+import { ChatProps } from './utils/interfaces';
+import { Card } from './components/Card';
+import { Order } from './components/Order';
+import { schema } from './utils/schema';
 
 Amplify.configure(awsconfig);
 
-interface ChatProps { }
-interface CardProps {
-  img?: string
-  title?: string
-}
-
-const Card = (props: any) => {
-  let [data, setData] = useState<CardProps[]>([])
-
-  useEffect(() => {
-    let newData: CardProps[] = []
-    Object.keys(props).map((key: any) => {
-      newData.push({ img: props[key].imageUrl, title: props[key].title })
-    })
-
-    setData(newData)
-  }, [])
-
-  return (
-    <div>
-      {
-        data.map((item: CardProps, index: number) => <div key={index}><h3>{item.title}</h3><img src={item.img} alt="" style={{ maxWidth: "40px", maxHeight: "40px", }} /></div>)
-      }
-    </div>
-  )
-}
-
-const Chat: StorefrontFunctionComponent<ChatProps> = ({ }) => {
+const Chat: StorefrontFunctionComponent<ChatProps> = ({ chatName, avatarIcon, placeHolder }) => {
 
   async function handleMsg(input: any) {
 
     const response = await Interactions.send(awsconfig.aws_bots_config[0].name, input);
-    console.log(response)
-    if (response.responseCard) {
-      addResponseMessage(response.message)
-      renderCustomComponent(Card, response.responseCard.genericAttachments)
-      addResponseMessage("Essas são as opções")
+
+    let product = undefined
+    let numPedido = undefined
+
+    if (response.slots !== undefined) {
+      product = response.slots.product
+      numPedido = response.slots.numPedido
     }
-    else {
-      addResponseMessage(response.message)
+
+    if (product) {
+      addResponseMessage("Achei alguns produtos que podem ser do seu interesse, dê uma olhada.");
+      renderCustomComponent(Card, response);
+      return;
     }
+
+    if (numPedido) {
+      renderCustomComponent(Order, { response, avatarIcon })
+      return;
+    }
+
+    addResponseMessage(response.message)
+
   }
 
   useEffect(() => {
-    addResponseMessage('Olá, em que posso te ajudar?')
+    addResponseMessage('Olá, eu sou o Joseph, seu bot pessoal, em que posso te ajudar hoje?')
+    renderCustomComponent(() => {
+      function handleOption(option: string) {
+        addUserMessage(option)
+        handleMsg(option)
+      }
+      return (
+        <div className="sug-container">
+          <h5>Sugestões:</h5>
+          <div className="button-container">
+            <button className="button-bot-option" onClick={() => {
+              handleOption('Informações sobre meu pedido')
+            }}>Info Pedido</button>
+            <button className="button-bot-option" onClick={() => {
+              handleOption('Comprar produtos')
+            }}>Comprar</button>
+            <button className="button-bot-option" onClick={() => {
+              handleOption('Rastrear meu pedido')
+            }}>Rastrear</button>
+          </div>
+        </div>
+      )
+    }, '')
   }, [])
+
   return (
     <Widget
       handleNewUserMessage={(event: any) => handleMsg(event)}
-      title="Chatbot"
-      senderPlaceHolder="Escreva sua mensagem"
+      title={chatName}
+      senderPlaceHolder={placeHolder}
       subtitle={false}
-      profileAvatar="https://hiringcoders9.vtexassets.com/assets/vtex.file-manager-graphql/images/133ad9db-b1d4-4fa8-878a-00635dbaaa60___2ed90089707038a3e798b66150cdd1c5.png"
+      profileAvatar={avatarIcon}
       showCloseButton={true}
-
     />
   )
 
 }
+
+Chat.schema = schema;
 
 export default Chat;
