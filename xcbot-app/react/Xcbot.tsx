@@ -1,66 +1,91 @@
-import React from 'react'
-import ChatBot from 'react-simple-chatbot'
-import { ThemeProvider } from 'styled-components'
-import Theme from './components/Theme'
-import Informations from './components/Informations/Informations'
-import stepsBase from './components/Steps'
-
-interface XcbotProps {
-  chatName: string
-  avatarIcon: string
-  chatIcon: string
+import React, { useEffect } from 'react';
+import './utils/style.global.css';
+//AWS
+import Amplify, { Interactions } from 'aws-amplify';
+import awsconfig from './aws-exports';
+//
+import {
+  Widget,
+  addResponseMessage,
+  addUserMessage,
+  renderCustomComponent
 }
+  from 'react-chat-widget';
+import { ChatProps } from './utils/interfaces';
+import { Card } from './components/Card';
+import { Order } from './components/Order';
+import { schema } from './utils/schema';
 
-const Xcbot: StorefrontFunctionComponent<XcbotProps> = ({ chatName, avatarIcon, chatIcon }) => {
+Amplify.configure(awsconfig);
 
-  const steps = stepsBase(Informations)
-  return (
-    <>
-      <ThemeProvider theme={Theme.theme}>
-        <ChatBot 
-          steps={steps}
-          botDelay="1000" 
-          bubbleOptionStyle={Theme.bubbleOptionStyle} 
-          floatingStyle={Theme.floatingStyle} 
-          bubbleStyle={Theme.bubbleStyle} 
-          headerTitle={chatName}
-          floatingIcon={avatarIcon}
-          botAvatar={chatIcon}
-          placeholder="Digite sua mensagem"
-          floating="true" />
-      </ThemeProvider>
-    </>
-  );
-}
+const Chat: StorefrontFunctionComponent<ChatProps> = ({ chatName, avatarIcon, placeHolder }) => {
 
-Xcbot.schema = {
-  title: 'ChatBot',
-  description: 'Testando ChatBoot',
-  type: 'object',
-  properties: {
-    chatName:{
-      title: 'Titulo',
-      description: 'nome do chatbot',
-      type: 'string',
-      default:"ChatBot - XCoders"
-    },
-    avatarIcon:{
-      title: 'Avatar',
-      description: 'Avatar do bot',
-      type: 'string',
-      widget: {
-        'ui:widget': 'image-uploader',
-      },
-    },
-    chatIcon:{
-      title: 'Icone',
-      description: 'Icone do chat',
-      type: 'string',
-      widget: {
-        'ui:widget': 'image-uploader',
-      },
+  async function handleMsg(input: any) {
+
+    const response = await Interactions.send(awsconfig.aws_bots_config[0].name, input);
+
+    let product = undefined
+    let numPedido = undefined
+
+    if (response.slots !== undefined) {
+      product = response.slots.product
+      numPedido = response.slots.numPedido
     }
-  },
+
+    if (product) {
+      addResponseMessage("Achei alguns produtos que podem ser do seu interesse, dê uma olhada.");
+      renderCustomComponent(Card, response);
+      return;
+    }
+
+    if (numPedido) {
+      renderCustomComponent(Order, { response, avatarIcon })
+      return;
+    }
+
+    addResponseMessage(response.message)
+
+  }
+
+  useEffect(() => {
+    addResponseMessage('Olá, eu sou o Joseph, seu bot pessoal, em que posso te ajudar hoje?')
+    renderCustomComponent(() => {
+      function handleOption(option: string) {
+        addUserMessage(option)
+        handleMsg(option)
+      }
+      return (
+        <div className="sug-container">
+          <h5>Sugestões:</h5>
+          <div className="button-container">
+            <button className="button-bot-option" onClick={() => {
+              handleOption('Informações sobre meu pedido')
+            }}>Info Pedido</button>
+            <button className="button-bot-option" onClick={() => {
+              handleOption('Comprar produtos')
+            }}>Comprar</button>
+            <button className="button-bot-option" onClick={() => {
+              handleOption('Rastrear meu pedido')
+            }}>Rastrear</button>
+          </div>
+        </div>
+      )
+    }, '')
+  }, [])
+
+  return (
+    <Widget
+      handleNewUserMessage={(event: any) => handleMsg(event)}
+      title={chatName}
+      senderPlaceHolder={placeHolder}
+      subtitle={false}
+      profileAvatar={avatarIcon}
+      showCloseButton={true}
+    />
+  )
+
 }
 
-export default Xcbot
+Chat.schema = schema;
+
+export default Chat;
