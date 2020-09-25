@@ -4,6 +4,130 @@
   --color-primary: #0B305A;
   font-size: 95%;
 }
+/* Estrutura Card - BOT */
+.order-box{
+    width:100%;
+}
+.finish-order{
+    margin-top:10px;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.finish-order button{
+    outline: none;
+    border:none;
+    width:70%;
+    height:7vh;
+    padding:0px 10px;
+    background:#8BC34A;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#f3f3f3;
+    font-size:0.9rem;
+    cursor:pointer;
+}
+.wrapper {
+      height: auto;
+      width: 100%;
+      overflow-y: hidden;
+      overflow-x: scroll;
+    }
+
+    /* width */
+    .wrapper::-webkit-scrollbar {
+      height: 7px;
+    }
+
+    /* Track */
+    .wrapper::-webkit-scrollbar-track {
+      background: #f3f3f3;
+    }
+
+    /* Handle */
+    .wrapper::-webkit-scrollbar-thumb {
+      background: #ddd;
+      border-radius: 15px;
+    }
+
+    /* Handle on hover */
+    .wrapper::-webkit-scrollbar-thumb:hover {
+      background: #666;
+    }
+
+    .wrapper_child {
+      display: flex;
+      height: inherit;
+    }
+
+    .wrapper_child>.tab {
+      width: 34%;
+      height: 100%;
+      text-align: center;
+      padding: 10px;
+      margin: 0 10px;
+      border-right: 1px solid #f3f3f3;
+    }
+
+    .tab .title-box {
+      padding: 0px;
+      margin: 0px;
+      height: auto;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 13px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .tab .price-box {
+      margin: 8px 0px;
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+    }
+
+    .tab .price-box span {
+      font-weight: bold;
+      font-size: 11px;
+    }
+
+    .tab .buttons-qtd-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+    }
+
+    .tab .buttons-qtd-box input,
+    button {
+      border: none;
+      outline: none;
+    }
+
+    .tab .buttons-qtd-box .plus {
+      background: #8BC34A;
+      color: #f3f3f3;
+      height: 25px;
+      width: 25px;
+      cursor: pointer;
+    }
+
+    .tab .buttons-qtd-box .minus {
+      background: #BB0321;
+      color: #f3f3f3;
+      height: 25px;
+      width: 25px;
+      cursor: pointer;
+    }
+
+    .tab .buttons-qtd-box input {
+      width: 30px;
+      border-top: 1px solid #f3f3f3;
+      border-bottom: 1px solid #f3f3f3;
+      text-align: center;
+    }
 /* Estrutura Buttons - BOT */
 .sug-container{
     width:100%;
@@ -99,7 +223,7 @@
         padding: 0 0 15px;
     }
     .rcw-conversation-container .rcw-close-button {
-        background-color: #35cce6;
+        background-color: transparent;
         border: 0;
         display: block;
         position: absolute;
