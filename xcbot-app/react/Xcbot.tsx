@@ -14,6 +14,7 @@ import {
 import { ChatProps } from './utils/interfaces';
 import { Card } from './components/Card';
 import { Order } from './components/Order';
+import { schema } from './utils/schema';
 
 Amplify.configure(awsconfig);
 
@@ -23,7 +24,6 @@ const Chat: StorefrontFunctionComponent<ChatProps> = ({ chatName, avatarIcon, pl
 
     const response = await Interactions.send(awsconfig.aws_bots_config[0].name, input);
 
-    console.log(response)
     let product = undefined
     let numPedido = undefined
 
@@ -33,13 +33,14 @@ const Chat: StorefrontFunctionComponent<ChatProps> = ({ chatName, avatarIcon, pl
     }
 
     if (product) {
-      renderCustomComponent(Card, response)
-      return
+      addResponseMessage("Achei alguns produtos que podem ser do seu interesse, dê uma olhada.");
+      renderCustomComponent(Card, response);
+      return;
     }
 
     if (numPedido) {
-      renderCustomComponent(Order, response)
-      return
+      renderCustomComponent(Order, { response, avatarIcon })
+      return;
     }
 
     addResponseMessage(response.message)
@@ -54,61 +55,37 @@ const Chat: StorefrontFunctionComponent<ChatProps> = ({ chatName, avatarIcon, pl
         handleMsg(option)
       }
       return (
-        <div>
-          <button className="button-bot-option" onClick={() => {
-            handleOption('Informações sobre meu pedido')
-          }}>Info Pedido</button>
-          <button className="button-bot-optison" onClick={() => {
-            handleOption('Comprar produtos')
-          }}>Comprar Produtos</button>
-          <button className="button-bot-option" onClick={() => {
-            handleOption('Rastrear meu pedido')
-          }}>Rastreio</button>
+        <div className="sug-container">
+          <h5>Sugestões:</h5>
+          <div className="button-container">
+            <button className="button-bot-option" onClick={() => {
+              handleOption('Informações sobre meu pedido')
+            }}>Info Pedido</button>
+            <button className="button-bot-option" onClick={() => {
+              handleOption('Comprar produtos')
+            }}>Comprar</button>
+            <button className="button-bot-option" onClick={() => {
+              handleOption('Rastrear meu pedido')
+            }}>Rastrear</button>
+          </div>
         </div>
       )
     }, '')
   }, [])
-  console.log(avatarIcon);
+
   return (
     <Widget
       handleNewUserMessage={(event: any) => handleMsg(event)}
       title={chatName}
       senderPlaceHolder={placeHolder}
       subtitle={false}
-      profileAvatar="https://hiringcoders9.vtexassets.com/assets/vtex.file-manager-graphql/images/133ad9db-b1d4-4fa8-878a-00635dbaaa60___2ed90089707038a3e798b66150cdd1c5.png"
+      profileAvatar={avatarIcon}
       showCloseButton={true}
     />
   )
 
 }
 
-Chat.schema = {
-  title: 'ChatBot',
-  description: 'Testando ChatBoot',
-  type: 'object',
-  properties: {
-    chatName: {
-      title: 'Titulo',
-      description: 'nome do chatbot',
-      type: 'string',
-      default: "Chatbot"
-    },
-    avatarIcon: {
-      title: 'Avatar',
-      description: 'Avatar do bot',
-      type: 'string',
-      default: "-",
-      widget: {
-        'ui:widget': 'image-uploader',
-      },
-    },
-    placeHolder: {
-      title: 'Place Holder',
-      description: 'Observação da caixa de texto do chat',
-      type: 'string',
-      default: "Escreva sua mensagem"
-    },
-  },
-}
+Chat.schema = schema;
 
 export default Chat;

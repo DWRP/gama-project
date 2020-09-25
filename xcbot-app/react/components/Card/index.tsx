@@ -12,16 +12,20 @@ export const Card = (props: any) => {
   return (
     <div>
       {
-        data.map((item: CardProps) => {
+        (data ?
+          data.map((item: CardProps) => {
+            return (
+              <div key={item.id}>
+                <h4>{item.title}</h4>
+                <img src={item.imageUrl} alt="" />
+                <h5>R$ {item.price}</h5>
+              </div>
+            )
+          })
+          :
+          'Produto não encontrado'
+        )
 
-          return (
-            <div key={item.id}>
-              <h4>{item.title}</h4>
-              <img src={item.imageUrl} alt="" />
-              <h5>R$ {item.price}</h5>
-            </div>
-          )
-        })
       }
     </div>
   )

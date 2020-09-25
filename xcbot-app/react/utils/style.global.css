@@ -2,7 +2,44 @@
   --text-bot-color: #f4f7f9;
   --send-input-color: #f4f7f9;
   --color-primary: #0B305A;
+  font-size: 95%;
 }
+/* Estrutura Buttons - BOT */
+.sug-container{
+    width:100%;
+}
+.sug-container h5{
+    font-size:10px;
+    opacity:0.7;
+}
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.button-bot-option{
+    flex: 1;
+    background:#f3f3f3;
+    color: #333;
+    font-size: 0.7rem;
+    font-weight:bold;
+    font-family: 'Helvetica';
+    border:1px solid #ddd;
+    height:5vh;
+    padding:5px;
+    border-radius:15px;
+    margin-right:10px;
+}
+.button-bot-option:hover{
+    background: #d1e4f9;
+    cursor:pointer;
+    text-decoration:underline;
+}
+.button-bot-option:focus{
+    outline: none;  
+}
+/* Estrutura Geral - BOT */
 .rcw-conversation-container .rcw-header {
     background-color: var(--color-primary);
     border-radius: 10px 10px 0 0;
@@ -398,6 +435,21 @@
     animation-duration: 0.5s;
     animation-name: b;
     animation-fill-mode: forwards;
+}
+/* Order Card */
+.rcw-message-order{
+    width:100%;
+}
+.rcw-order-title {
+    font-size:0.7rem;
+    font-weight:bold;
+    padding:0px;
+    margin:0px;
+}
+.rcw-order-result {
+    font-size: 1.1rem;
+    font-weight:normal;
+    padding-left:10px;
 }
 @media screen and (max-width: 800px) {
     .rcw-launcher {

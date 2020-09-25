@@ -4,104 +4,106 @@
       "experimentalOptimizeRendering": true
     },
     "children": [
-      "menu-item#category-apparel",
-      "menu-item#category-home",
+      "menu-item#para-eles",
+      "menu-item#para-elas",
       "menu-item#more"
     ]
   },
-  "menu-item#category-apparel": {
+  "menu-item#para-eles": {
     "props": {
-      "id": "menu-item-category-apparel",
+      "id": "menu-item-para-eles",
       "type": "custom",
       "iconId": null,
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/apparel---accessories/",
+        "href": "/masculino/",
         "noFollow": false,
-        "tagTitle": "Apparel & Accessories",
-        "text": "Apparel & Accessories"
+        "tagTitle": "Para eles",
+        "text": "Para eles"
       }
     },
     "blocks": [
-      "vtex.menu@2.x:submenu#category-apparel"
+      "vtex.menu@2.x:submenu#para-eles"
     ]
   },
-  "vtex.menu@2.x:submenu#category-apparel": {
+  "vtex.menu@2.x:submenu#para-eles": {
     "props": {
       "width": "auto"
     },
     "children": [
-      "vtex.menu@2.x:menu#category-apparel"
+      "vtex.menu@2.x:menu#para-eles"
     ]
   },
-  "vtex.menu@2.x:menu#category-apparel": {
+  "vtex.menu@2.x:menu#para-eles": {
     "props": {
       "orientation": "vertical"
     },
     "children": [
-      "menu-item#category-apparel-clothing",
-      "menu-item#category-apparel-accessories",
-      "menu-item#category-apparel-eyeglasses"
+      "menu-item#para-eles-roupas"
     ]
   },
-  "menu-item#category-apparel-clothing": {
+  "menu-item#para-eles-roupas": {
     "props": {
-      "id": "menu-item-category-apparel-clothing",
+      "id": "menu-item-para-eles-roupas",
       "type": "custom",
       "iconId": null,
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/apparel---accessories/clothing/",
+        "href": "/masculino/roupas",
         "noFollow": false,
-        "tagTitle": "Clothing",
-        "text": "Clothing"
+        "tagTitle": "Roupas",
+        "text": "Roupas"
       }
     }
   },
-  "menu-item#category-apparel-accessories": {
+  "menu-item#para-elas": {
     "props": {
-      "id": "menu-item-category-apparel-accessories",
+      "id": "menu-item-para-elas",
       "type": "custom",
       "iconId": null,
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/apparel---accessories/accessories/",
+        "href": "/feminino/",
         "noFollow": false,
-        "tagTitle": "Accessories",
-        "text": "Accessories"
+        "tagTitle": "Para elas",
+        "text": "Para elas"
       }
-    }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#para-elas"
+    ]
   },
-  "menu-item#category-apparel-eyeglasses": {
+  "vtex.menu@2.x:submenu#para-elas": {
     "props": {
-      "id": "menu-item-category-apparel-eyeglasses",
+      "width": "auto"
+    },
+    "children": [
+      "vtex.menu@2.x:menu#para-elas"
+    ]
+  },
+  "vtex.menu@2.x:menu#para-elas": {
+    "props": {
+      "orientation": "vertical"
+    },
+    "children": [
+      "menu-item#para-elas-roupas"
+    ]
+  },
+  "menu-item#para-elas-roupas": {
+    "props": {
+      "id": "menu-item-para-elas-roupas",
       "type": "custom",
       "iconId": null,
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/apparel---accessories/eyeglasses/",
+        "href": "/feminino/roupas",
         "noFollow": false,
-        "tagTitle": "Eyeglasses",
-        "text": "Eyeglasses"
-      }
-    }
-  },
-  "menu-item#category-home": {
-    "props": {
-      "id": "menu-item-category-home",
-      "type": "custom",
-      "iconId": null,
-      "highlight": false,
-      "itemProps": {
-        "type": "internal",
-        "href": "/MASCULINO/",
-        "noFollow": false,
-        "tagTitle": "Home & Decor",
-        "text": "Home & Decor"
+        "tagTitle": "Roupas",
+        "text": "Roupas"
       }
     }
   },
@@ -125,7 +127,7 @@
   },
   "vtex.menu@2.x:submenu#more": {
     "props": {
-      "width": "100%"
+      "width": "auto"
     },
     "children": [
       "flex-layout.row#menu-more"

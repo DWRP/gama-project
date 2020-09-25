@@ -14,7 +14,6 @@
   "header-layout.desktop": {
     "children": [
       "flex-layout.row#1-desktop",
-      "flex-layout.row#3-desktop",
       "sticky-layout#4-desktop"
     ]
   },
@@ -26,24 +25,7 @@
       "fullWidth": true
     }
   },
-  "flex-layout.row#3-desktop": {
-    "props": {
-      "blockClass": "menu-link",
-      "horizontalAlign": "center",
-      "preventHorizontalStretch": true,
-      "preventVerticalStretch": true,
-      "fullWidth": true
-    },
-    "children": [
-      "vtex.menu@2.x:menu#websites",
-      "flex-layout.col#spacer"
-    ]
-  },
-  "flex-layout.col#spacer": {
-    "props": {
-      "width": "grow"
-    }
-  },
+  
   "sticky-layout#4-desktop": {
     "props": {
       "blockClass": "sticky-header"
@@ -64,7 +46,6 @@
     "children": [
       "flex-layout.col#logo-desktop",
       "flex-layout.col#category-menu",
-      "flex-layout.col#spacer",
       "search-bar",
       "locale-switcher",
       "login",
@@ -109,7 +90,6 @@
     "children": [
       "drawer",
       "logo#mobile",
-      "flex-layout.col#spacer",
       "login",
       "minicart.v2"
     ],
@@ -127,8 +107,8 @@
   },
   "menu#drawer": {
     "children": [
-      "menu-item#category-apparel",
-      "menu-item#category-home",
+      "menu-item#para-eles",
+      "menu-item#para-elas",
       "menu-item#more"
     ],
     "props": {
