@@ -74,11 +74,13 @@
 .imageElement--smallBanner2 {
   width: 748px;
   max-height: 364;
+  float: right;
 }
 
 .imageElement--smallBanner3 {
   width: 748px;
   max-height: 364;
+  float: right;
 }
 
 .skuSelectorContainer {
@@ -109,17 +111,20 @@
 
   .imageElement--fullBanner1 {
     width: 748px;
-    height: 1022px;
+    height: 1045px;
+    /* float: left; */
   }
   
   .imageElement--smallBanner2 {
     width: 748px;
     max-height: 364;
+    /* float: right; */
   }
   
   .imageElement--smallBanner3 {
     width: 748px;
     max-height: 364;
+    /* float: right; */
   }
 }
 

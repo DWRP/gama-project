@@ -15,12 +15,12 @@
     "props": {
       "horizontalAlign": "center",
       "blockClass": "gridImages",
-      "rowGap": 5,
-      "colGap": 5
+      "rowGap": 8,
+      "colGap": 8
     },
     "children": [
-      "flex-layout.col#imageLeft",
-      "flex-layout.col#imageRight"
+      "flex-layout.col#imageRight",
+      "flex-layout.col#imageLeft"
     ]
   },
   "flex-layout.col#imageLeft": {
@@ -32,7 +32,7 @@
     "props": {
       "src": "assets/categorybannerFull.png",
       "blockClass": "fullBanner1",
-      "maxHeight" :1022,
+      "maxHeight" :1045,
       "maxWidth": 748
     }
   },
