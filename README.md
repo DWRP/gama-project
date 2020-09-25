@@ -46,7 +46,9 @@ de suporte ao cliente 24 horas.
 <h1 align="center">
     <img alt="Example" title="Example" src="frontend/assets/chatbot-v2-2.png" width="90%" />
 </h1>
-
+<h1 align="center">
+    <img alt="Example" title="Example" src="frontend/assets/chatbot-v2-3.jpeg" width="90%" />
+</h1>
 ## :clipboard: Principais conceitos utilizados
 
 Para esse projeto, foi utilizado as principais bibliotecas do javascript, com o principal diferencial, que foi a integração com a VTEX Store Framework e VTEX IO, criando um componente "plugavel" para ecommerce.
