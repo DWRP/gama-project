@@ -6,7 +6,8 @@
 }
 
 .sliderTrackContainer {
-  max-width: 1520px;
+  width: 100%!important;
+  max-width: 100%;
 }
 
 .paginationDotsContainer {
@@ -24,4 +25,18 @@
   margin-bottom: 25px;
   padding-left: .5rem;
   padding-right: .5rem;
+  background: #ffffff;
+  margin: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+  transition: all .2s ease-in;
+  
+}
+
+.slide--shelf:hover {
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,.25);
+  -moz-box-shadow:  0 0 20px rgba(0,0,0,.25);;
+  box-shadow: 0 0 20px rgba(0,0,0,.25);
+  border-color: none;
 }

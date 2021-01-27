@@ -54,6 +54,7 @@
   color: #fff;
   border: none;
   margin-right: -24px;
+  border-radius: 5px;
 }
 
 .buttonContainer {
@@ -63,6 +64,23 @@
 .imageElement--storePrint {
   max-height: 300px;
   margin-bottom: 20px;
+}
+
+.imageElement--fullBanner1 {
+  width: 748px;
+  height: 748px;
+}
+
+.imageElement--smallBanner2 {
+  width: 748px;
+  max-height: 364;
+  float: right;
+}
+
+.imageElement--smallBanner3 {
+  width: 748px;
+  max-height: 364;
+  float: right;
 }
 
 .skuSelectorContainer {
@@ -89,6 +107,24 @@
   .imageElement--storePrint {
     margin-bottom: 0px;
     max-height: 600px;
+  }
+
+  .imageElement--fullBanner1 {
+    width: 748px;
+    height: 1045px;
+    /* float: left; */
+  }
+  
+  .imageElement--smallBanner2 {
+    width: 748px;
+    max-height: 364;
+    /* float: right; */
+  }
+  
+  .imageElement--smallBanner3 {
+    width: 748px;
+    max-height: 364;
+    /* float: right; */
   }
 }
 

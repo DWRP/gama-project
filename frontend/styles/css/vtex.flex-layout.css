@@ -41,7 +41,7 @@
   font-size: 14px;
 }
 .flexRow--deals {
-  background-color: #010B0D;
+  background-color: rgba(28,28,28);
   padding: 14px 0px;
 }
 
@@ -81,6 +81,8 @@
 .flexRow--quickviewMainRow {
   display: flex;
   max-height: 100%;
+  background: #ffffff;
+  padding: 32px;
 }
 
 .flexColChild--quickviewDetails:first-child {
@@ -96,3 +98,19 @@
 .flexRow--addToCartRow {
   padding-bottom: 1rem;
 }
+
+.flexRowContent--faq {
+  max-width: 700px;
+  margin: auto;
+}
+
+.flexRow--shelf-container {
+  padding: 32px 0;
+  margin: 32px 0;
+}
+
+.flexRowContent--gridImages {
+  padding: 64px 0;
+  width: auto;
+}
+
